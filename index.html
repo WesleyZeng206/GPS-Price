@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangout Spot Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Perfect Hangout Spot</h1>
+        <p class="subtitle">Discover great places to hang out based on your budget and distance preferences</p>
+        
+        <form id="hangoutForm" class="form">
+            <div class="input-group">
+                <label for="budget">Budget ($)</label>
+                <input type="number" id="budget" name="budget" step="0.01" min="0" placeholder="Enter your budget" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="distance">Distance (miles)</label>
+                <input type="number" id="distance" name="distance" step="0.1" min="0" placeholder="Maximum distance" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Find Hangout Spots</button>
+        </form>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Finding perfect spots for you...</p>
+        </div>
+        
+        <div id="results" class="results hidden">
+            <h2>Recommended Spots</h2>
+            <div id="responseContent" class="response-content"></div>
+        </div>
+        
+        <div id="error" class="error hidden">
+            <h3>Oops! Something went wrong</h3>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
